@@ -17,7 +17,20 @@ import javax.swing.JPanel;
 	  //Tableau stockant les éléments à afficher dans la calculatrice
 	  String[] tab_string = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "=", "C", "+", "-", "*", "/"};
 	  //Un bouton par élément à afficher
-	 //code manquant
+	 JButton[] tab_button = new JButton[tab_string.length];
+
+private JLabel ecran = new JLabel();
+	 
+ private Dimension dim = new Dimension(50, 40);
+	
+  private Dimension dim2 = new Dimension(50, 31);
+	
+  private double chiffre1;
+	
+  private boolean clicOperateur = false, update = false;
+
+	  private String operateur = "";
+
 	  
 	  public Calculatrice(){
 	    this.setSize(240, 260);
@@ -81,7 +94,14 @@ import javax.swing.JPanel;
 	          operateur.add(tab_button[i]);
 	          break;
 	        case 16 :
-	          //code manquant2
+	          tab_button[i].addActionListener(new DivListener());
+                     tab_button[i].setPreferredSize(dim2);
+	   
+                           operateur.add(tab_button[i]);
+	 
+                                                    
+
+
 	          break;
 	        default :
 	          //Par défaut, ce sont les premiers éléments du tableau
@@ -144,7 +164,19 @@ import javax.swing.JPanel;
 	  }
 
 	  //Listener affecté au bouton =
-	 //code manquant
+	 class EgalListener implements ActionListener {
+	 
+   public void actionPerformed(ActionEvent arg0){
+	
+      calcul();
+	 
+     update = true;
+	
+      clicOperateur = false;
+	
+    }
+	
+  }
 
 	  //Listener affecté au bouton +
 	  class PlusListener implements ActionListener {
