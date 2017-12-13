@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener; 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
@@ -15,13 +17,7 @@ import javax.swing.JPanel;
 	  //Tableau stockant les éléments à afficher dans la calculatrice
 	  String[] tab_string = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", "=", "C", "+", "-", "*", "/"};
 	  //Un bouton par élément à afficher
-	  JButton[] tab_button = new JButton[tab_string.length];
-	  private JLabel ecran = new JLabel();
-	  private Dimension dim = new Dimension(50, 40);
-	  private Dimension dim2 = new Dimension(50, 31);
-	  private double chiffre1;
-	  private boolean clicOperateur = false, update = false;
-	  private String operateur = "";
+	 //code manquant
 	  
 	  public Calculatrice(){
 	    this.setSize(240, 260);
@@ -85,9 +81,7 @@ import javax.swing.JPanel;
 	          operateur.add(tab_button[i]);
 	          break;
 	        case 16 :
-	          tab_button[i].addActionListener(new DivListener());
-	          tab_button[i].setPreferredSize(dim2);
-	          operateur.add(tab_button[i]);
+	          //code manquant2
 	          break;
 	        default :
 	          //Par défaut, ce sont les premiers éléments du tableau
@@ -150,13 +144,7 @@ import javax.swing.JPanel;
 	  }
 
 	  //Listener affecté au bouton =
-	  class EgalListener implements ActionListener {
-	    public void actionPerformed(ActionEvent arg0){
-	      calcul();
-	      update = true;
-	      clicOperateur = false;
-	    }
-	  }
+	 //code manquant
 
 	  //Listener affecté au bouton +
 	  class PlusListener implements ActionListener {
@@ -222,7 +210,15 @@ import javax.swing.JPanel;
 	    }
 	  }
 
-	
-	 
+	  //Listener affecté au bouton de remise à zéro
+	  class ResetListener implements ActionListener {
+	    public void actionPerformed(ActionEvent arg0){
+	      clicOperateur = false;
+	      update = true;
+	      chiffre1 = 0;
+	      operateur = "";
+	      ecran.setText("");
+	    }
+	  }      
 		
 }
