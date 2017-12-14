@@ -33,8 +33,6 @@ private JLabel ecran = new JLabel();
 
 	  
 	  public Calculatrice(){
-	    this.setSize(240, 260);
-	    this.setTitle("Calculette");
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	    this.setResizable(false);
