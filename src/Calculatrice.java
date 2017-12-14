@@ -145,6 +145,15 @@ private JLabel ecran = new JLabel();
 	      }
 	    }
 	  }
+		
+          class EgalListener implements ActionListener {
+ -	    public void actionPerformed(ActionEvent arg0){
+ -	      calcul();
+ -	      update = true;
+ -	      clicOperateur = false;
+ -	    }
+ -	  }
+
 
 	  //Listener utilisé pour les chiffres
 	  //Permet de stocker les chiffres et de les afficher
